@@ -1,12 +1,23 @@
-# Forge Ansible Deployment [WIP]
+# Deploy Forge [wip]
 
-This is an `Ansible Role` for deploying your own forge.
+### Config
 
-It will:
- 1. Update remote
- 2. Install docker
- 3. Install debian 9 (maybe 10?)
-    - ftp
-    - ssh
-    - nginx
-    - nodejs/python
+```
+{
+  "all": {
+    "hosts": {
+      "my.hosts.domain": null
+    }
+  },
+  "_meta": {
+    "hosts": {
+      "my.hosts.domain": {
+        "forge": {
+          "name": "brick-alley"
+        },
+        "ansible_ssh_private_key_file": "~/.ssh/id_ed25519"
+      }
+    }
+  }
+}
+```

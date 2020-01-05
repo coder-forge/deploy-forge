@@ -1,0 +1,15 @@
+- hosts: all
+
+  pre_tasks:
+    - name: wait for ssh connection
+      wait_for_connection:
+        connect_timeout: 10
+        sleep: 5
+        timeout: 600
+
+    - name: Gather facts
+      setup:
+
+  roles:
+    - base
+    - ftp
